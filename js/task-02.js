@@ -1,8 +1,14 @@
-const ingredients = [
-  'Potatoes',
-  'Mushrooms',
-  'Garlic',
-  'Tomatos',
-  'Herbs',
-  'Condiments',
-];
+const ingredients = ['Potatoes', 'Mushrooms', 'Garlic', 'Tomatos', 'Herbs', 'Condiments'];
+
+const navRef = document.querySelector('#ingredients');
+
+const listToInsertItems = ingredients.map(ingredient => {
+  const liRef = document.createElement('li');
+
+  liRef.className = 'item';
+  liRef.textContent = ingredient;
+
+  return liRef;
+});
+
+navRef.append(...listToInsertItems);
