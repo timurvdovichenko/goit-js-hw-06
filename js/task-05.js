@@ -6,5 +6,11 @@ const refs = {
 refs.inputNameField.addEventListener('input', onInputName);
 
 function onInputName(event) {
-  refs.outputNameField.textContent = event.currentTarget.value;
+  if (event.currentTarget.value.trim() === '') {
+    refs.outputNameField.textContent = 'Anonymous';
+  } else if (event.currentTarget.value.trim() !== '') {
+    refs.outputNameField.textContent = event.currentTarget.value.trim();
+  } else {
+    refs.outputNameField.textContent = 'Anonymous';
+  }
 }

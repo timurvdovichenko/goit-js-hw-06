@@ -10,14 +10,10 @@ const refs = {
   bodyBackgroundColor: document.body,
 };
 
-// console.log(refs.spanColorText);
-// console.log(refs.buttonChangeColor);
-// console.dir(refs.bodyBackgroundColor);
-// refs.bodyBackgroundColor.style.background = 'red';
-
 refs.buttonChangeColor.addEventListener('click', onButtonChangeBgColor);
 
 function onButtonChangeBgColor(event) {
-  refs.bodyBackgroundColor.style.background = getRandomHexColor();
-  refs.spanColorText.textContent = getRandomHexColor();
+  const colorRandom = getRandomHexColor();
+  refs.bodyBackgroundColor.style.background = colorRandom;
+  refs.spanColorText.textContent = colorRandom;
 }
